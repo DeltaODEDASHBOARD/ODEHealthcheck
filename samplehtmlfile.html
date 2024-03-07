@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="60"> <!-- Refresh every 30 minutes (30 * 60 = 1800 seconds) -->
+    <title>Dynamic Content</title>
+</head>
+<body>
+   <h1 id="content">My Header</h1>
+   <h6 id="content">My Header</h6>
+ 
+    <script>
+        // Function to fetch new content
+        function fetchNewContent() {
+            // You can use AJAX or fetch API to fetch new content from a server
+            // For simplicity, let's generate random content here
+            var newContent = "This is the new content generated at " + new Date().toLocaleString();
+            document.getElementById("content").innerHTML = newContent;
+        }
+ 
+        // Call fetchNewContent initially
+        fetchNewContent();
+ 
+        // Set up interval to refresh content every 30 minutes
+        setInterval(fetchNewContent, 60000); // 30 minutes * 60 seconds * 1000 milliseconds
+    </script>
+</body>
+</html>
